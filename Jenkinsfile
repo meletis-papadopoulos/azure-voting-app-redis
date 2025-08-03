@@ -36,7 +36,7 @@ pipeline {
                 dir("${WORKSPACE}/azure-vote") {
                     script {
                         docker.withRegistry('', dockerhub) {
-                            def image = docker.build('blackdentech/jenkins-course:2023')
+                            def image = docker.build('meletiop22/azure-vote-app:2025')
                             image.push()
                         }
                     }
