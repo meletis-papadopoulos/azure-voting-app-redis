@@ -44,6 +44,7 @@ pipeline {
             }
         }
         stage('Run Grype') {
+            agent {label ''}
             steps {
                 grypeScan autoInstall: true, repName: 'grypeReport_${JOB_NAME}_${BUILD_NUMBER}.txt', scanDest: 'registry:meletiop22/azure-vote-app:2025'
             }
